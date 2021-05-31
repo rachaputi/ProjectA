@@ -1,0 +1,81 @@
+﻿@model TransportManagementSystem.Models.Vehicle
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Vehicle</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="VehicleNumber" />
+            <div class="form-group">
+                <label asp-for="Capacity" class="control-label"></label>
+                <input asp-for="Capacity" class="form-control" />
+                <span asp-validation-for="Capacity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AvailableSeats" class="control-label"></label>
+                <input asp-for="AvailableSeats" class="form-control" />
+                <span asp-validation-for="AvailableSeats" class="text-danger"></span>
+            </div>
+          
+            <div class="form-group">
+                <label asp-for="IsAc" class="control-label"></label>
+                <select asp-for="IsAc" class="form-control">
+                    <option value="YES">YES</option>
+                    <option value="NO">No</option>
+                </select>
+                <span asp-validation-for="IsAc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IsOperable" class="control-label"></label>
+                <select asp-for="IsOperable" class="form-control">
+                    <option value="YES">YES</option>
+                    <option value="NO">No</option>
+                </select>
+                <span asp-validation-for="IsOperable" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MorningArrival" class="control-label"></label>
+                <input asp-for="MorningArrival" class="form-control" />
+                <span asp-validation-for="MorningArrival" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MorningDepature" class="control-label"></label>
+                <input asp-for="MorningDepature" class="form-control" />
+                <span asp-validation-for="MorningDepature" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EveningArrival" class="control-label"></label>
+                <input asp-for="EveningArrival" class="form-control" />
+                <span asp-validation-for="EveningArrival" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EveningDepature" class="control-label"></label>
+                <input asp-for="EveningDepature" class="form-control" />
+                <span asp-validation-for="EveningDepature" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RouteNumber" class="control-label"></label>
+                <select asp-for="RouteNumber" class="form-control" asp-items="ViewBag.RouteNumber"></select>
+                <span asp-validation-for="RouteNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

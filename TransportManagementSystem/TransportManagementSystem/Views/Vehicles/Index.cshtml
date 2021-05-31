@@ -1,0 +1,90 @@
+﻿@model IEnumerable<TransportManagementSystem.Models.Vehicle>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a class="btn btn-success btn-sm" asp-action="Create">Add New Vehicle</a>
+</p>
+<table class="table table-striped text-center table-hover table-responsive ">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VehicleNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Capacity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AvailableSeats)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsAc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsOperable)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MorningArrival)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MorningDepature)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EveningArrival)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EveningDepature)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RouteNumberNavigation.RouteNumber)
+            </th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VehicleNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Capacity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AvailableSeats)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsAc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsOperable)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MorningArrival)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MorningDepature)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EveningArrival)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EveningDepature)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RouteNumberNavigation.RouteNumber)
+                </td>
+                <td>
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.VehicleNumber">Edit</a>
+                    <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.VehicleNumber">Details</a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.VehicleNumber">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

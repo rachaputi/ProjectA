@@ -1,0 +1,55 @@
+﻿@model IEnumerable<TransportManagementSystem.Models.Route>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a class="btn btn-success btn-sm" asp-action="Create">Add New Route</a>
+</p>
+<table class="table table-striped text-center">
+<thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RouteNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Stop1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Stop2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Stop3)
+        </th>
+        <th>Action</th>
+    </tr>
+</thead>
+<tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RouteNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stop1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stop2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stop3)
+            </td>
+            <td>
+
+                <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.RouteNumber">Edit</a>
+                <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.RouteNumber">Details</a>
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.RouteNumber">Delete</a>
+            </td>
+        </tr>
+    }
+</tbody>
+</table>

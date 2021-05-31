@@ -1,0 +1,96 @@
+﻿@model TransportManagementSystem.Models.VehicleAllocation
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>VehicleAllocation</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AllocationId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AllocationId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EmployeeId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Employee.EmployeeId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Employee.Location)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Employee.Location)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RouteNumberNavigation.RouteNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RouteNumberNavigation.RouteNumber)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.VehicleNumberNavigation.VehicleNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.VehicleNumberNavigation.VehicleNumber)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.VehicleNumberNavigation.MorningArrival)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.VehicleNumberNavigation.MorningArrival)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.VehicleNumberNavigation.MorningDepature)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.VehicleNumberNavigation.MorningDepature)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.VehicleNumberNavigation.EveningArrival)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.VehicleNumberNavigation.EveningArrival)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.VehicleNumberNavigation.EveningDepature)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.VehicleNumberNavigation.EveningDepature)
+        </dd>
+
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RouteNumberNavigation.Stop1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RouteNumberNavigation.Stop1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RouteNumberNavigation.Stop2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model =>model.RouteNumberNavigation.Stop2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RouteNumberNavigation.Stop3)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model =>model.RouteNumberNavigation.Stop3)
+        </dd>
+
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.AllocationId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
